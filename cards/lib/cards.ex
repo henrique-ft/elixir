@@ -62,4 +62,22 @@ defmodule Cards do
         Enum.member?(deck, card)
     end
     
+    # Este método retorna uma tupla
+    # Uma tupla é igual a um array, porém cada index tem um significado especial para nós que estamos desenvolvedores
+    # Você não pode acrescentar ou retirar elementos de uma tupla
+    def deal(deck, hand_size) do
+        
+        Enum.split(deck, hand_size)
+    end
+    
+    def save(deck, filename) do
+        
+        # O Atom erlang serve para chamar funções do erlang no elixir,  
+        binary = :erlang.term_to_binary(deck)
+        
+        # Escrevendo um arquivo com Elixir
+        File.write(filename, binary)
+        
+    end
+    
 end

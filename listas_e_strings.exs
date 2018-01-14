@@ -12,7 +12,7 @@ defmodule ListasEStrings do
         # Ele recebe cada elemento em suits como suit executando a função do bloco 'do' para cada um.
         # Após feito isso é retornado o resultado em um novo array
         # Apesar de ser bem parecido com o for das linguagens tradicionais, o List comprehension tem algumas diferenças
-        # O list comprehension, assim como tudo no elixir, retorna uma valor.
+        # O list comprehension, assim como tudo no elixir, retorna um valor.
         # Todo list comprehension retorna uma lista, isso significa que podemos, inclusive, atribuir um list comprehension a uma variável
         
         # cards = for value <- values do
