@@ -11,5 +11,19 @@ defmodule ErlangFunctions do
         File.write(filename, binary)
         
     end
-    
+
+    # Carrega um arquivo
+    def load(filename) do
+        
+        # A função File.read lê um arquivo e retorna uma tupla com um status e o valor dentro do arquivo
+        # No caso da função save, salvamos o deck(lista) em binário em um arquivo, no caso aqui podemos ler
+        # Usamos o pattern matching para verificar e tratar caso o arquivo exista ou não
+        # Quando lemos o arquivo escrito em binário, temos retornado um tipo lista, exatamente como salvamos antes.
+        # Pois foi salvo como binário
+        case File.read(filename) do
+        
+            {:ok, binary} -> :erlang.binary_to_term(binary)
+            {:error, _} -> "O arquivo não existe"
+        end
+    end
 end

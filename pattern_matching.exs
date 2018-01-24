@@ -25,4 +25,14 @@ defmodule PatternMatching do
         {valor1, valor2} = tupla
         valor2
     end
+    
+    # Podemos realizar operações de pattern matching com o operador case
+    def match_ok_ou_erro(tupla) do
+        
+        # O operador case recebe um valor e faz pattern matching para verificar as condições
+        case tupla do
+            {:ok _} -> "Deu certo"
+            {:error, _} -> "Deu errado"
+        end
+    end
 end 

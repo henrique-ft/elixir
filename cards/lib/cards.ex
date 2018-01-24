@@ -94,4 +94,13 @@ defmodule Cards do
             {:error, _} -> "O arquivo não existe"
         end
     end
+    
+    # O Pipe operator pega o resultado de uma função e atribui ao primeiro argumento da próxima função
+    # Podemos encadear várias funções resultando em um código muito mais limpo e agradável
+    def create_hand(hand_size) do
+        
+        Cards.create_deck 
+        |> Cards.shuffle
+        |> Cards.deal(hand_size)
+    end
 end
