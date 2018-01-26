@@ -16,7 +16,7 @@ defmodule Cards do
         ## Examples
         
           iex> deck = Cards.create_deck
-          iex> {hand, deck} = Cards.deal(deck, 1)
+          iex> {hand, _} = Cards.deal(deck, 1)
           iex> hand
           ["Ace of Spades"]
     """
@@ -74,7 +74,15 @@ defmodule Cards do
     end
 
     # Um método no elixir pode ter ? na sua declaração, geralmente métodos que tem ? na declaração retornam true ou false
-    
+    @doc """
+        Determina se um deck contêm uma carta específica
+        
+        ## Examples
+          
+          iex> deck = Cards.create_deck
+          iex> Cards.contains?(deck, "Ace of Spades")
+          true
+    """
     def contains?(deck, card) do
         
         # O método member? recebe uma lista e um elemento, verificando se o elemento se encontra na lista
