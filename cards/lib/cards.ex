@@ -1,5 +1,25 @@
 defmodule Cards do
-
+    @moduledoc """
+        Aqui podemos escrever uma documentação para o nosso módulo
+        Se extivermos usando o package exdoc, podemos transformar toda essa documentação
+        Em html de maneira super fácil
+        Apenas entrando na raiz do projeto e digitar o comando mix docs
+        Todas a documentação do Elixir é feita com o exdocs
+        É muito da hora
+    """
+    
+    @doc """
+        Para documentar uma função específica podemos usar @doc
+        No caso, quando gerarmos o html, teremos essa descrição para a função create_deck
+        Podemos inclusive adicionar exemplos de código no nosso html gerado
+        
+        ## Examples
+        
+          iex> deck = Cards.create_deck
+          iex> {hand, deck} = Cards.deal(deck, 1)
+          iex> hand
+          ["Ace of Spades"]
+    """
     def create_deck do
         
         # Podemos definir uma lista de elementos usando [].
@@ -65,6 +85,10 @@ defmodule Cards do
     # Este método retorna uma tupla
     # Uma tupla é igual a um array, porém cada index tem um significado especial para nós que estamos desenvolvedores
     # Você não pode acrescentar ou retirar elementos de uma tupla
+    @doc """
+        Divide o deck em uma mão e o resto do deck.
+        O argumento hand_size é quantas cartas você quer na sua mão
+    """
     def deal(deck, hand_size) do
         
         Enum.split(deck, hand_size)

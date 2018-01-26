@@ -1,3 +1,15 @@
+# O arquivo mix.exs tem um monte de informações sobre o nosso projeto
+# Aqui é onde você pode definir as dependências do seu projeto
+# Para adicionar um novo package ao nosso projeto adicione uma tupla na função deps
+# o primeiro argumento da tupla é o nome do package, o segundo é a versão ex:
+#  defp deps do
+#    [
+#        {:ex_doc, "0.12"}
+#    ]
+#  end
+#
+# Para instalar os packages, entre na pasta do projeto e rode mix deps.get
+
 defmodule Cards.Mixfile do
   use Mix.Project
 
@@ -28,6 +40,6 @@ defmodule Cards.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:ex_doc, "~> 0.16", only: :dev, runtime: false}]
   end
 end
