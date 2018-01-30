@@ -39,10 +39,8 @@ defmodule KeywordLists do
         # E esse keyword list é o último argumento da função
         # Podemos omitir os [] como sintax sugar, logo:
         
-        KeywordLists.receive_keyword_list "primeiro argumento", primary: "red", secondary: "green" # lembrando que parênteses não são obrigatórios no elixir
+        KeywordLists.receive_keyword_list("primeiro argumento", primary: "red", secondary: "green")
         
-        # = KeywordLists.receive_keyword_list("primeiro argumento", primary: "red", secondary: "green")
-        #
         # = KeywordLists.receive_keyword_list([primary: "red", secondary: "green"])
         #
         # = KeywordLists.receive_keyword_list([{:primary, "red"},{:secondary, "green"}])
