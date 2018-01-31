@@ -21,3 +21,13 @@ defmodule Struct do
     defstruct hex: nil  
 
 end
+
+# Podemos definir propriedades padrão de um struct, sem definirmos nenhum valor padrão com a sintaze [:atom]
+defmodule Pessoa do
+    
+    # Também podemos definir como obrigatória a definição de certa chave na criação do struct com o @enforce_keys
+    # Com o enforce_keys se não criarmos o struct com a propriedade :nome teremos um erro de compilação
+    @enforce_keys [:nome]
+
+    defstruct [:nome,:idade]
+end

@@ -12,6 +12,8 @@ defmodule DoEnd do
         end
 
         # Por de baixo dos panos é isso que acontece, poderíamos trocar qualquer 'do end' por essa sintaxe
+        # O 'do end' na verdade é um sintax sugar
+        # Toda função do elixir recebe um primeiro parâmetro e um segundo, sendo o segundo um keyword list
         if true, do: (
 
             a = 1+2
@@ -33,5 +35,5 @@ defmodule DoEnd do
     end    
 end
 
-# Poderíamos definir um modulo INTEIRO em uma linha, por exemplo
+# Poderíamos inclusive definir um modulo INTEIRO em uma linha, por exemplo
 defmodule ComDo, do: (def teste, do: "teste"; def x, do: 4)

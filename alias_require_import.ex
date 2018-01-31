@@ -14,9 +14,14 @@ end
 #
 # Alias
 #
+# Um Alias no elixir é um identificador capitalizado (como String, Keyword e etc) que é
+# convertido para um :atom durante a compilação
+# Por exemplo, o alias String é traduzido para :"Elixir,String"
+# Alias se transformam em atoms porque na BEAM modulos são sempre representados por atoms.
+#
 defmodule Dois do
     
-    # O Alias serve para importar um módulo e renomea-lo dentro de um escopo
+    # A palavra chave alias serve para importar um Módulo/Alias e renomea-lo dentro de um escopo
     alias Um ,as: U
     # É interessante para simplificar/encurtar chamadas de módulos
     # alias Math.List, as: List
@@ -26,7 +31,6 @@ defmodule Dois do
     end
 
 end
-
 
 defmodule Quatro do 
 
