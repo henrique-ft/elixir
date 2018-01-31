@@ -34,4 +34,15 @@ defmodule ListasEStrings do
             "#{value} of #{suit}"
         end
     end
+    
+    # Podemos concatenar strings com <>
+    def string_concatenation, do: "Henrique " <> "Fernandez"
+
+    # Podemos concatenar listas com ++
+    # Também podemos remover elementos de uma lista com o --
+    def list_operators do
+
+        value = [1,2,3,4] ++ [5,6,7] # [1,2,3,4,5,6,7]
+        value -- [2] # [1,3,4,5,6,7]
+    end
 end

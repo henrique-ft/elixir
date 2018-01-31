@@ -7,7 +7,7 @@ defmodule Maps do
     
         # Temos abaixo um map com 
         um_map = %{primary: "red", secondary: "blue"}
-        colors.primary # red
+        um_map.primary # red
     end
     
     # Podemos acessar propriedades de um map usando pattern matching

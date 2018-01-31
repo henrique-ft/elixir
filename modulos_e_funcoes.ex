@@ -10,6 +10,13 @@
 
 defmodule ModulosEFuncoes do
     
+    # Podemos definir atributos em módulos através do @
+    # Atributos em módulos funcionam como constantes, não podem ser mudados
+    @attribute :valor
+    @attribute_int 3
+    @attribute_map %{one: "two"}
+    @database_connection "5712h51r021dnjdklq" 
+
     # Não precisamos de parênteses para chamar funções no Elixir, parênteses não são obrigatórios
     # Também não precisamos declarar retorno nas funções, temos o retorno implícido, sendo o último valor passado
     
@@ -18,6 +25,15 @@ defmodule ModulosEFuncoes do
         "hello"
     end
     
+    # Podemos chamar atributos da maneira a seguir
+    def return_attribute do
+
+        @attribute
+    end
+
+    # Podemos também definr funções de uma forma simplificada, em apenas uma linha
+    def simplificada(x), do: x + @attribute_int
+
     # Podemos definir passar argumentos para uma função através dos ().
     # No elixir podemos ter diversos métodos dentro de um módulo, estes que podem conter diferentes nomes ou não.
     # Caso os métodos tenham nomes iguais, eles serão separados pelo número de argumentos.
@@ -43,6 +59,15 @@ defmodule ModulosEFuncoes do
         # O método member? recebe uma lista e um elemento, verificando se o elemento se encontra na lista
         
         Enum.member?(deck, card)
+    end
+
+    # Podemos declarar um módulo dentro de outro
+    # Dessa forma podemos chama-lo como ModulosEFuncoes.Interno.main
+    defmodule Interno do
+
+        def main do
+            "Im a internal module"
+        end
     end
 
 end
