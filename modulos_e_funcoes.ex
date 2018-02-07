@@ -31,6 +31,23 @@ defmodule ModulosEFuncoes do
         @attribute
     end
 
+    # Podemos definir funções com parâmetros pré-definidos através da sintaxe nome_parametro \\ "valor padrão"
+    def default_params(nome \\ "") do
+        
+        nome
+    end
+
+    def funcoes_anonimas do
+
+        # Podemos chamar funções da forma anônima com a sintaxe fn x -> x + 1 end
+        Enum.map([1,2,3,4], fn x -> x + 1 end) 
+
+        # Podemos também, simplificar mais ainda utilizando a sintaxe &(&1 + &2)
+        # Onde podemos receber os parâmetros com um sintax sugar
+        # &1 significa o primeiro parâmetro, &2 significa o segundo parâmetro  
+        Enum.map([1,2,3,4], &(&1 + &2))
+    end
+
     # Podemos também definr funções de uma forma simplificada, em apenas uma linha
     def simplificada(x), do: x + @attribute_int
 

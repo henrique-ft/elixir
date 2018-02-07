@@ -31,3 +31,34 @@ defmodule Pessoa do
 
     defstruct [:nome,:idade]
 end
+
+defmodule Teste do
+    
+    def update_struct(pessoa) do
+
+        # No elixir, nada muda, tudo se transforma
+        # Para dar update em um struct podemos fazer dessa maneira, temos um sintax sugar
+        # Passamos o struct antigo e um |, após o pipe colocamos os atributos que queremos alterar
+        # Aqui transformamos qualquer pessoa em um josé
+        %Pessoa{pessoa | nome: "josé"}
+    end
+
+    def update_struct_two(pessoa) do
+
+        # Aqui transformamos qualquer pessoa em um josé com 30 anos
+        %Pessoa{pessoa | nome: "josé", idade: 30}
+    end
+
+    def chaves_do_struct(pessoa) do
+
+        # Structs também são Maps, portanto podemos utilizar as funções do módulo Map com Structs
+        # No caso abaixo, retornaremos todas as chaves do determinado struct
+        Map.keys(pessoa)
+    end
+
+    def qual_struct(struct) do
+
+        # Podemos descobrir com qual struct estamos trabalhando utilizando o método especial __struct__
+        struct.__struct__
+    end
+end

@@ -28,7 +28,7 @@ defmodule PatternMatching do
         
         # O operador case recebe um valor e faz pattern matching para verificar as condições
         case tupla do
-            {:ok _} -> "Deu certo"
+            {:ok, _} -> "Deu certo"
             {:error, _} -> "Deu errado"
         end
     end
@@ -38,13 +38,28 @@ defmodule PatternMatching do
         
         seu_nome = "José"
         nome1 = "arnaldo"
-        nome2 "José"
+        nome2 = "José"
         
         # O sinal ^ diz para receber o último valor atribuido a variável e utiliza-lo como cláusula do match
         case seu_nome do
             ^nome1 -> "Errou"
             ^nome2 -> "Acertou" # Nesse caso, irá cair aqui
         end
+    end
+
+    # No elixir podemos também utilizar o pattern matching em parâmetros de função
+    # No exemplo abaixo, recebemos o parâmetro lista, e ja fazemos o pattern matching direto no parâmetro
+    # Ou seja, teremos disponível na função a 'variável' lista e as variáveis 'a' e 'b'
+    def match_parameter([a,b | _tail] = lista) do
+        
+        "recebemos os valores #{inspect a} #{inspect b} e a lista #{inspect lista}"
+    end
+
+    # No caso abaixo receberemos um parâmetro que de match na estrutura abaixo
+    # Mas teremos disponível apenas a e b
+    def other_match_parameter([a ,b | _tail]) do
+        
+        "recebemos apenas os valores #{inspect a} e #{inspect b}"
     end
 
 end 
