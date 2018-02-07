@@ -12,7 +12,7 @@ defmodule PatternMatching do
         
       [r,g,b] # [1,2,3]
     end
-    
+
     # Utilizando pattern matching também podemos retornar o valor de uma tupla, inserindo em "variáveis"
     # por exemplo, abaixo, se o valor da tupla for {"teste", 5} a função vai dar match atribuindo
     # "teste" a valor1 e 5 a valor2

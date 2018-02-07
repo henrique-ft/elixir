@@ -40,7 +40,9 @@ defmodule ModulosEFuncoes do
     def funcoes_anonimas do
 
         # Podemos chamar funções da forma anônima com a sintaxe fn x -> x + 1 end
-        Enum.map([1,2,3,4], fn x -> x + 1 end) 
+        Enum.map([1,2,3,4], fn x -> 
+            x + 1 
+        end) 
 
         # Podemos também, simplificar mais ainda utilizando a sintaxe &(&1 + &2)
         # Onde podemos receber os parâmetros com um sintax sugar
