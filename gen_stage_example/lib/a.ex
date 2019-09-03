@@ -1,19 +1,21 @@
 defmodule A do
   use GenStage
 
-  def init(state_a) do
-    {:producer, state_a}
+  # The initial state of the producer (things to do)
+  def init(initial_state) do
+    {:producer, initial_state}
   end
 
-  # Receive a integer value(also called demand) and the state that was initialized
-  def handle_demand(demand, state_a) when demand != 1000 do
-    IO.inspect(demand)
-    IO.inspect(state_a)
+  # Receive a integer value(also called demand, that is a number of things a consumer is asking for) and the state of the producer at the time the consumer asked for them
+  def handle_demand(demand, state) when demand > 0 do
+    IO.inspect(state)
     IO.inspect("passando pelo A")
+    IO.inspect(demand)
 
-    # Receive a demand, and return events
-    # action / list of values (events) / state_a
-    # the state_a never is send to producer_consumer or consumer, it is ever transformed and sent back to A
-    {:noreply, [1, 2, 3], state_a}
+    {to_do, remaining} = Enum.split(state, demand)
+
+    # action / list of values (things) / state_a
+    # the remaining never is send to producer_consumer or consumer, it is ever and sent back to A
+    {:noreply, to_do, remaining}
   end
 end
