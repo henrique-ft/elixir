@@ -7,9 +7,9 @@ defmodule C do
 
   # Receive events, from PID, and the state that was initialized
   def handle_events(to_do, _from, state_c) do
-    #IO.inspect(state_c)
-    #IO.inspect("passando pelo C")
-    #IO.inspect(things)
+    IO.inspect(state_c)
+    IO.inspect("passando pelo C")
+    IO.inspect(things)
 
     Process.sleep(500)
 

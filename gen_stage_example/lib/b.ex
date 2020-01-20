@@ -9,9 +9,9 @@ defmodule B do
 
   # Receive events, from PID, and the state that was initialized
   def handle_events(to_do, _from, state_b) do
-    #IO.inspect(state_b)
-    #IO.inspect("passando pelo B")
-    #IO.inspect(things)
+    IO.inspect(state_b)
+    IO.inspect("passando pelo B")
+    IO.inspect(things)
 
     # receive events from producer and send to consumer
     # action / list of values (events) / state_b
