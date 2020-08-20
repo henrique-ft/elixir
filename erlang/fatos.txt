@@ -1,0 +1,6 @@
+- A sintaxe é muito similar ao Prolog
+- Não é orientado a objetos
+- Tudo é imutável no Erlang, você não pode re-atribuir um valor a uma variável
+- Não existe palavras chaves para loop dentro do Erlang, todo loop é feito a partir de recursão
+- Strings são armazenadas como uma lista de inteiros (Muito bom para processar dados binários)
+- Não temos if then e else

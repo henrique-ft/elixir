@@ -1,0 +1,26 @@
+- Concorrência {
+
+  - Habilidade de rodar multiplos processos de uma vez só
+  - Esta é uma habilidade chave para rodar tolerância a falhas
+  - Não há dados compartilhados entre os processos
+  - Tudo é imutável (Imutabilidade)
+  - Isolamento de falhas
+  - Hot swap (Você pode trocar / mudar o código enquanto o programa está rodando)
+}
+
+- É uma linguagem funcional simples {
+
+  - A tipagem é dinâmica
+  - Não há definição de tipo de dados pelo usuário
+  - Têm concorrência de maneira primitiva
+  - Têm tratamento de erros demaneira primitiva
+}
+
+- É uma linguagem declatativa
+- Tem um poderoso garbage colector
+
+- Erlang foi desenhada para fazer sistemas que nunca caem
+- Algum processo irá monitorar os outros, e levanta-los de volta caso os outros quebrem
+- "Não mais do que 4 minutos parado por ano, ou 99.99999% de tempo funcionando" - Joe Armstrong
+- Foco em processos e interações entre processos
+

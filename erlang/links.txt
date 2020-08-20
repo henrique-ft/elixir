@@ -1,0 +1,3 @@
+www.erlang.org
+www.tryerlang.org
+www.learnyousomeerlang.com
